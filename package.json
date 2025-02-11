@@ -1,0 +1,26 @@
+{
+  "name": "blog.mendes.software",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.ts",
+    "start:dev": "node --watch --env-file=.env src/index.ts",
+    "test": "NODE_ENV=TEST; node --test --test-reporter=tap __tests__/*.spec.ts",
+    "test:cov": "NODE_ENV=TEST; node --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info --test-coverage-include=src/**/*.ts __tests__/*.spec.ts"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/autoload": "^6.1.0",
+    "fastify": "^5.2.1",
+    "pino": "^9.6.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "@types/supertest": "^6.0.2",
+    "supertest": "^7.0.0"
+  }
+}
