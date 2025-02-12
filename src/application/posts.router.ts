@@ -1,9 +1,10 @@
 import type { FastifyPluginCallback } from "fastify";
-import { listPosts } from "../domain/posts/list-posts.ts";
+import { getPost } from "../domain/posts/get-post.handler.ts";
 
 export const postRouter: FastifyPluginCallback = (app, opts, done) => {
   app.get("/posts", async (request, reply) => {
-    return listPosts();
+    const post = getPost();
+    return reply.view("post", post);
   });
 
   done();
